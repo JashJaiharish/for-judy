@@ -5,7 +5,7 @@ export default function PerformerSilhouette({ className = '' }) {
       style={{ rotate: '-2deg' }}
     >
       <img
-        src="/photos/performer.jpg"
+        src="./photos/performer.jpg"
         alt="The Performer"
         loading="lazy"
         className="w-full aspect-[3/4] object-cover rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.2)]"

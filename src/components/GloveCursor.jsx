@@ -64,7 +64,7 @@ export default function GloveCursor() {
         }}
       />
       <img
-        src="/glove-cursor.png"
+        src="./glove-cursor.png"
         alt="Glove Cursor"
         className="w-10 h-auto drop-shadow-[0_0_8px_rgba(245,215,110,0.5)] select-none"
       />

@@ -14,8 +14,8 @@ export const karthu = {
   name: 'Karthu',
 
   /* ---------- music & video ---------- */
-  music: '/music/song.mp3', // Drop your audio/MP3 file into /public/music/song.mp3
-  loadingVideo: '/video/loading.mp4', // Drop your loading video file into /public/video/loading.mp4
+  music: './music/song.mp3', // Drop your audio/MP3 file into /public/music/song.mp3
+  loadingVideo: './video/loading.mp4', // Drop your loading video file into /public/video/loading.mp4
 
   /* ---------- intro ---------- */
   introLead: 'Tonight, the spotlight is for...', // shown first, softly
@@ -28,14 +28,14 @@ export const karthu = {
 
   /* ---------- hanging photo wall ---------- */
   photos: [
-    { image: '/photos/karthu-01.jpg', caption: 'My favorite smile.' },
-    { image: '/photos/karthu-02.jpg', caption: 'One of my favorite memories.' },
-    { image: '/photos/karthu-03.jpg', caption: 'You, being you.' },
-    { image: '/photos/karthu-04.jpg', caption: 'That golden afternoon.' },
-    { image: '/photos/karthu-05.jpg', caption: 'Home is wherever this is.' },
-    { image: '/photos/karthu-06.jpg', caption: 'My favorite view.' },
+    { image: './photos/karthu-01.jpg', caption: 'My favorite smile.' },
+    { image: './photos/karthu-02.jpg', caption: 'One of my favorite memories.' },
+    { image: './photos/karthu-03.jpg', caption: 'You, being you.' },
+    { image: './photos/karthu-04.jpg', caption: 'That golden afternoon.' },
+    { image: './photos/karthu-05.jpg', caption: 'Home is wherever this is.' },
+    { image: './photos/karthu-06.jpg', caption: 'My favorite view.' },
   ],
-  galleryLetterImage: '/photos/gallery-letter.png', // Drop photo into /public/photos/gallery-letter.jpg to show between gallery and letter
+  galleryLetterImage: './photos/gallery-letter.png', // Drop photo into /public/photos/gallery-letter.jpg to show between gallery and letter
 
   /* ---------- the letter ---------- */
   letter: `I don't know how many birthdays
@@ -51,7 +51,7 @@ will always mean something to me.`,
   /* ---------- star & reason section ---------- */
   starLabel: 'THE STAR',
   reasonLabel: 'AND THE REASON FOR THE SHOW',
-  starImage: '/photos/star-reason.jpg', // Separate photo for this section (drop your custom image at /public/photos/star-reason.jpg)
+  starImage: './photos/star-reason.jpg', // Separate photo for this section (drop your custom image at /public/photos/star-reason.jpg)
 
   /* ---------- cake ---------- */
   cakePrompt: 'Make a wish, Karthu.',
@@ -60,7 +60,7 @@ will always mean something to me.`,
   wishDone: 'I hope your wish comes true.',
 
   /* ---------- finale ---------- */
-  finaleGif: '/photos/my-dance.gif', // Drop your GIF into /public/photos/ and set the path here (e.g. '/photos/dance.gif')
+  finaleGif: './photos/my-dance.gif', // Drop your GIF into /public/photos/ and set the path here (e.g. '/photos/dance.gif')
   finalMessages: ['Karthu', 'Happy Birthday ❤', 'Keep shining.'],
   finalWhisper: "I'll always be somewhere in the crowd, cheering for you.",
   finalLove: 'I love you.',
