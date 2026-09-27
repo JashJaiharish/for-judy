@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #d4af37;
+  --gold-bright: #f5d76e;
+  --cream: #f8f5ed;
+  --wine: #5a0f14;
+}
+
+html {
+  background: #000;
+  scroll-behavior: auto;
+}
+
+html.locked,
+html.locked body {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: url('/glove-cursor-36.png') 12 2, auto;
+}
+
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.32);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+}
+
+/* ------------------------------- gold text ------------------------------- */
+.text-gold-soft {
+  color: var(--gold);
+}
+.text-gold-glow {
+  color: var(--gold-bright);
+  text-shadow:
+    0 0 14px rgba(245, 215, 110, 0.4),
+    0 0 46px rgba(212, 175, 55, 0.22);
+}
+.text-gold-glow-strong {
+  color: #fbeaa6;
+  text-shadow:
+    0 0 10px rgba(245, 215, 110, 0.55),
+    0 0 34px rgba(212, 175, 55, 0.4),
+    0 0 80px rgba(212, 175, 55, 0.25);
+}
+.script {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+/* ---------------------------- film grain + vignette ---------------------- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -60px;
+  z-index: 40;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  animation: grain 1s steps(3) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-18px, 12px); }
+  66% { transform: translate(14px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+.vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 39;
+  background: radial-gradient(ellipse at center, transparent 48%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+/* --------------------------------- buttons ------------------------------- */
+.btn-wish {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: var(--gold-bright);
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  padding: 1rem 2.6rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.btn-wish:hover {
+  border-color: rgba(245, 215, 110, 0.9);
+  box-shadow: 0 0 26px rgba(212, 175, 55, 0.25);
+  text-shadow: 0 0 12px rgba(245, 215, 110, 0.6);
+}
+
+/* ------------------------------ photo frames ----------------------------- */
+.photo-frame {
+  background: linear-gradient(160deg, #0d0c0a, #060606);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow:
+    0 30px 60px -18px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.12);
+}
+.photo-frame img {
+  filter: sepia(0.28) contrast(1.05) brightness(0.94);
+  transition: filter 0.8s ease, transform 1.2s ease;
+}
+.photo-frame:hover img {
+  filter: sepia(0.12) contrast(1.06) brightness(1.02);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+}
+
+/* small-caps label text */
+.label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.5em;
+  color: rgba(248, 245, 237, 0.42);
+  text-transform: uppercase;
+}
+
+.pulse-soft {
+  animation: pulse-soft 2.6s ease-in-out infinite;
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* reduced motion: kill grain animation and long transitions */
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
