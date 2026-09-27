@@ -39,7 +39,7 @@ export default function Letter() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: 'top 12%',
+          start: 'top top',
           end: '+=180%',
           scrub: 0.8,
           pin: true,

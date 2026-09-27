@@ -26,8 +26,8 @@ export default function GalleryLetterImage() {
   if (!imageSrc) return null
 
   return (
-    <section ref={root} className="relative py-16 flex justify-center items-center my-auto">
-      <div className="w-[min(45vw,190px)] mx-auto text-center">
+    <section ref={root} className="relative z-20 min-h-[50vh] py-20 flex justify-center items-center bg-black">
+      <div className="w-[min(50vw,240px)] mx-auto text-center">
         <img
           src={imageSrc}
           alt="Memory between gallery and letter"
